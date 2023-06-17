@@ -25,12 +25,13 @@ The attributes required for the AMQP configuration come out under the [servers](
 <br>
 <br>
 The channels section of the specification is where we clearly define all the AMQP entities and their required properties. 
-* Publish -
+* Publish 
   * The operationId is used to define the name of the method to handle message publishing in the generated code. 
   * The bindings here only include an exchange as it’s the only property needed to send a message.
 * Subscribe
   * The operationId in the subscriber module however is used to define the method that captures the message from the consumer side. 
   * The binding rules in this section require the queue and routingKey attribute so that the subscriber module know what to exactly look for from the exchange. <br> 
+<br>
 This example makes use of a single channel with one AMQP entity configuration. But what if you want to implement multiple channels? In this use case let’s say you want the information of two different streetlights both of which publish and consume messages from different queues.  In the case of multiple channels, the only difference is to add another section with the same configuration.
 <br>
 <br>
